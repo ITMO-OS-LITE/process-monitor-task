@@ -18,22 +18,22 @@ jobs:
           ref: master
 
       - name: Run task 1
-        run: bash 1_users_processes.bash
+        run: ./1_users_processes.bash
 
       - name: Run task 2
-        run: bash 2_from_sbin.bash
+        run: ./2_from_sbin.bash
 
       - name: Run task 3
-        run: bash 3_pid_of_last.bash
+        run: ./3_pid_of_last.bash
 
       - name: Run task 4
-        run: bash 4_cpu_burst.bash
+        run: ./4_cpu_burst.bash
 
       - name: Run task 5
-        run: bash 5_avg_run_child_or_parent.bash
+        run: ./5_avg_run_child_or_parent.bash
 
       - name: Run task 6
-        run: bash 6_the_fattest_one.bash
+        run: ./6_the_fattest_one.bash
 
       - name: Run task 7
-        run: bash 7_io.bash
+        run: ./7_io.bash
