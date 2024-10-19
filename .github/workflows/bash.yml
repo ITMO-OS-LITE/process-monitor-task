@@ -1,11 +1,8 @@
-name: Hello World Tests
+name: Process Monitor Tests
 
 on:
   push:
   workflow_dispatch:
-
-env:
-  TASK: hello
 
 jobs:
   buildtest:
@@ -15,17 +12,28 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - name: Download tests
-        uses: actions/checkout@v4
-        with:
-          repository: ITMO-OS-LITE/public-tests
-          ref: master
-
       - name: Download student solutions
         uses: actions/checkout@v4
         with:
-          path: src
           ref: master
 
-      - name: Test solution
-        run: python3 tmain.py --suite ${{ env.TASK }}
+      - name: Run task 1
+        run: bash 1_users_processes.bash
+
+      - name: Run task 2
+        run: bash 2_from_sbin.bash
+
+      - name: Run task 3
+        run: bash 3_pid_of_last.bash
+
+      - name: Run task 4
+        run: bash 4_cpu_burst.bash
+
+      - name: Run task 5
+        run: bash 5_avg_run_child_or_parent.bash
+
+      - name: Run task 6
+        run: bash 6_the_fattest_one.bash
+
+      - name: Run task 7
+        run: bash 7_io.bash
